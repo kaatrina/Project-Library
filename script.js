@@ -5,6 +5,7 @@ function Book(title, author, pages) {
   this.author = author;
   this.pages = pages;
   this.id = crypto.randomUUID();
+  this.isRead = false;
 }
 
 function addBookToLibrary(title, author, pages) {
@@ -51,16 +52,16 @@ function displayBook(arr) {
     const buttonDiv = document.createElement("div");
     cardBook.appendChild(buttonDiv);
 
-    buttonDiv.classList.add('forBtn')
+    buttonDiv.classList.add("forBtn");
 
     const deleteBook = document.createElement("button");
     buttonDiv.appendChild(deleteBook);
 
     deleteBook.textContent = "Delete";
 
-    deleteBook.style.backgroundColor = 'white';
-    deleteBook.style.color = 'rgb(117, 117, 255)';
-    deleteBook.style.border = '2px solid rgb(117, 117, 255)'
+    deleteBook.style.backgroundColor = "white";
+    deleteBook.style.color = "rgb(117, 117, 255)";
+    deleteBook.style.border = "2px solid rgb(117, 117, 255)";
 
     deleteBook.addEventListener("click", () => {
       const bookId = cardBook.dataset.bookId;
@@ -70,23 +71,32 @@ function displayBook(arr) {
     const readBook = document.createElement("button");
     buttonDiv.appendChild(readBook);
 
-    readBook.textContent = "Unread";
+    if (arr[i].isRead) {
+      readBook.textContent = "Read";
+      readBook.style.backgroundColor = "rgb(117, 117, 255)";
+      readBook.style.color = "white";
+    } else {
+      readBook.textContent = "Unread";
+      readBook.style.backgroundColor = "white";
+      readBook.style.color = "rgb(117, 117, 255)";
+    }
 
-    readBook.style.backgroundColor = 'white';
-    readBook.style.color = 'rgb(117, 117, 255)';
-    readBook.style.border = '2px solid rgb(117, 117, 255)'
+    readBook.style.border = "2px solid rgb(117, 117, 255)";
 
     readBook.addEventListener("click", () => {
-  if (readBook.textContent === "Unread") {
-    readBook.textContent = "Read";
-    readBook.style.backgroundColor = 'rgb(117, 117, 255)';
-    readBook.style.color = 'white';
-  } else {
-    readBook.textContent = "Unread";
-    readBook.style.backgroundColor = 'white';
-    readBook.style.color = 'rgb(117, 117, 255)';
-  }
-});
+      if (arr[i].isRead === false) {
+        readBook.textContent = "Read";
+        readBook.style.backgroundColor = "rgb(117, 117, 255)";
+        readBook.style.color = "white";
+        arr[i].isRead = true;
+      } else if (arr[i].isRead) {
+        readBook.textContent = "Unread";
+        readBook.style.backgroundColor = "white";
+        readBook.style.color = "rgb(117, 117, 255)";
+
+        arr[i].isRead = false;
+      }
+    });
   }
 }
 
