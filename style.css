@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    margin-bottom: 100px;
+}
+.cardbook {
+    padding: 20px;
+    border: 2px solid rgb(117, 117, 255);
+    border-radius: 15px;
+
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    height: 240px;
+    width: 280px;
+    
+}
+
+.container {
+    padding: 20px;
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    color: gray;
+}
+
+
+.addNewBookButton {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.addNewBookButton button {
+
+    height: 50px;
+    width: 200px;
+    border-radius: 40px;
+
+    font-size: 20px;
+
+    border: rgb(117, 117, 255) 2px solid;
+    color:  rgb(117, 117, 255);
+    background-color: white;
+}
+
+.addNewBookButton button:hover {
+
+    height: 60px;
+    width: 210px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7575ff;
+    height: 100px;
+    color: white;
+}
+
+.forBtn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+
+button {
+    border-radius: 15px;
+}
+
+
+
+.cardbook button {
+    height: 30px;
+    width: 100px;
+}
+
+
+.cardbook button:hover {
+    height: 32px;
+    width: 104px;
+}
+
+
+dialog {
+    background-color: white;
+    border: 2px solid #7575ff;
+    border-radius: 20px;
+    height: 330px;
+    width: 400px;
+    padding: 20px;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+
+}
+
+.okBtn {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.okBtn button {
+    height: 34px;
+    width: 100px;
+
+
+    border: rgb(117, 117, 255) 2px solid;
+    background-color:  rgb(117, 117, 255);
+    color: white;
+}
+
+.okBtn button:hover {
+
+    color:  rgb(117, 117, 255);
+    background-color: white;
+}
+
+input {
+    border-radius: 20px;
+    border: 1px solid gray;
+    height: 20px;
+    padding: 5px;
+
+}
