@@ -1,11 +1,9 @@
 let myLibrary = [];
 
-
 class Book {
-  
   id = crypto.randomUUID();
   isRead = false;
-  
+
   constructor(title, author, pages) {
     this.title = title;
     this.author = author;
@@ -117,9 +115,12 @@ showBtn.addEventListener("click", () => {
   dialog.showModal();
 });
 
+
 dialog.addEventListener("close", () => {
   if (dialog.returnValue === "confirm") {
     const title = document.getElementById("titleInput").value;
+    console.log(title);
+
     const author = document.getElementById("authorInput").value;
     const pages = document.getElementById("pagesInput").value;
 
